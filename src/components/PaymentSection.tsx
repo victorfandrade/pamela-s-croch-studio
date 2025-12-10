@@ -102,29 +102,20 @@ export const PaymentSection = () => {
               <div className="space-y-4">
                 <div className="bg-card rounded-xl p-4 border border-border shadow-sm">
                   <p className="text-xs text-muted-foreground mb-2 font-medium">Chave PIX (CPF)</p>
-                  <div className="flex items-center gap-3">
-                    <code className="flex-1 rounded-xl bg-muted px-4 py-3.5 font-mono text-xl text-foreground font-bold tracking-wider">
-                      {pixKey}
-                    </code>
-                    <Button
-                      variant="default"
-                      size="lg"
-                      onClick={copyPixKey}
-                      className="shrink-0 h-14 px-6 text-base font-bold shadow-lg hover:shadow-xl transition-all"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="h-5 w-5 mr-2" />
-                          Copiado!
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="h-5 w-5 mr-2" />
-                          Copiar
-                        </>
-                      )}
-                    </Button>
-                  </div>
+                  <code className="block w-full rounded-xl bg-muted px-4 py-3.5 font-mono text-xl text-foreground font-bold tracking-wider text-center">
+                    {pixKey}
+                  </code>
+                </div>
+
+                <div className="flex justify-center">
+                  <Button
+                    variant="default"
+                    size="lg"
+                    onClick={copyPixKey}
+                    className="h-14 px-8 text-base font-bold shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {copied ? "Copiado!" : "Toque aqui para copiar ☑️"}
+                  </Button>
                 </div>
 
                 <div className="bg-card rounded-xl p-4 border border-border shadow-sm">
