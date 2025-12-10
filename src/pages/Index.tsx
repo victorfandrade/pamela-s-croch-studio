@@ -5,6 +5,7 @@ import { VideoModal } from "@/components/VideoModal";
 import { PaymentModal } from "@/components/PaymentModal";
 import { MaterialsSection } from "@/components/MaterialsSection";
 import { PaymentSection } from "@/components/PaymentSection";
+import { Footer } from "@/components/Footer";
 import { Crown } from "lucide-react";
 
 // Import thumbnails
@@ -123,7 +124,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-3xl mx-auto">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {premiumLessons.map((lesson, i) => (
             <div
               key={lesson.number}
@@ -149,13 +150,7 @@ const Index = () => {
       <PaymentSection />
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="container text-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Crochê da Pâmela. Todos os direitos reservados.
-          </p>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Modals */}
       <VideoModal

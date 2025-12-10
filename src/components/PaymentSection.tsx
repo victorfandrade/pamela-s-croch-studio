@@ -107,16 +107,14 @@ export const PaymentSection = () => {
                   </code>
                 </div>
 
-                <div className="flex justify-center">
-                  <Button
-                    variant="default"
-                    size="default"
-                    onClick={copyPixKey}
-                    className="px-6 font-bold shadow-lg hover:shadow-xl transition-all"
-                  >
-                    {copied ? "Copiado!" : "Toque aqui para copiar ☑️"}
-                  </Button>
-                </div>
+                <Button
+                  variant="default"
+                  size="default"
+                  onClick={copyPixKey}
+                  className="w-full font-bold shadow-lg hover:shadow-xl transition-all"
+                >
+                  {copied ? "Copiado!" : "Toque aqui para copiar ☑️"}
+                </Button>
 
                 <div className="bg-card rounded-xl p-4 border border-border shadow-sm">
                   <p className="text-xs text-muted-foreground mb-1 font-medium">Beneficiário</p>
