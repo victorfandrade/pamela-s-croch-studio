@@ -110,9 +110,9 @@ export const PaymentSection = () => {
                 <div className="flex justify-center">
                   <Button
                     variant="default"
-                    size="lg"
+                    size="default"
                     onClick={copyPixKey}
-                    className="h-14 px-8 text-base font-bold shadow-lg hover:shadow-xl transition-all"
+                    className="px-6 font-bold shadow-lg hover:shadow-xl transition-all"
                   >
                     {copied ? "Copiado!" : "Toque aqui para copiar ☑️"}
                   </Button>
