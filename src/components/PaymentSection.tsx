@@ -109,9 +109,9 @@ export const PaymentSection = () => {
 
                 <Button
                   variant="default"
-                  size="default"
+                  size="lg"
                   onClick={copyPixKey}
-                  className="w-full font-bold shadow-lg hover:shadow-xl transition-all"
+                  className="w-full font-bold shadow-lg hover:shadow-xl transition-all text-base"
                 >
                   {copied ? "Copiado!" : "Toque aqui para copiar ☑️"}
                 </Button>
