@@ -23,7 +23,7 @@ export const LessonCard = ({
         "group relative w-full overflow-hidden rounded-2xl bg-card border border-border/50 transition-all duration-300",
         "hover:shadow-xl hover:-translate-y-1",
         "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
-        isPremium && "ring-1 ring-accent/30"
+        isPremium && "ring-2 ring-accent/50"
       )}
       style={{ boxShadow: "var(--card-shadow)" }}
     >
@@ -40,8 +40,8 @@ export const LessonCard = ({
             loading="lazy"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
-            <span className="font-display text-4xl text-primary/30">
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/15 to-primary/5">
+            <span className="font-display text-4xl text-primary/40">
               {number.toString().padStart(2, "0")}
             </span>
           </div>
@@ -73,16 +73,16 @@ export const LessonCard = ({
       <div className="p-4">
         <div className="flex items-center gap-3">
           <span className={cn(
-            "flex h-8 w-8 items-center justify-center rounded-full text-xs font-semibold",
+            "flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold",
             isPremium 
-              ? "bg-accent/10 text-accent" 
-              : "bg-primary/10 text-primary"
+              ? "bg-accent/20 text-accent" 
+              : "bg-primary/15 text-primary"
           )}>
             {isPremium ? <Lock className="h-3.5 w-3.5" /> : number.toString().padStart(2, "0")}
           </span>
           <div className="text-left">
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
-              Aula {number.toString().padStart(2, "0")}
+              {isPremium ? "👑 Premium" : `Aula ${number.toString().padStart(2, "0")}`}
             </p>
             <h3 className="font-display text-base font-medium text-foreground line-clamp-1">
               {title}
