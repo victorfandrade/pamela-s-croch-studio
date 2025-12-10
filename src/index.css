@@ -6,71 +6,78 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 27%;
+    --background: 0 0% 98%;
+    --foreground: 350 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 350 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 350 30% 15%;
 
-    --primary: 350 89% 60%;
+    --primary: 340 75% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 350 30% 96%;
-    --secondary-foreground: 350 89% 45%;
+    --secondary: 340 50% 95%;
+    --secondary-foreground: 340 75% 40%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 45 100% 15%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 350 89% 60%;
+    --urgent: 0 75% 50%;
+    --urgent-foreground: 0 0% 100%;
+
+    --border: 340 20% 88%;
+    --input: 340 20% 88%;
+    --ring: 340 75% 55%;
 
     --radius: 1rem;
 
     /* Custom tokens */
-    --rose-gradient: linear-gradient(135deg, hsl(350 89% 60% / 0.1) 0%, hsl(350 89% 60% / 0.02) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(215 25% 27% / 0.08);
-    --card-shadow-hover: 0 12px 32px -8px hsl(350 89% 60% / 0.15);
-    --gold-glow: 0 0 20px hsl(38 92% 50% / 0.3);
+    --rose-gradient: linear-gradient(135deg, hsl(340 75% 55% / 0.15) 0%, hsl(340 75% 55% / 0.02) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(340 30% 30% / 0.1);
+    --card-shadow-hover: 0 16px 40px -8px hsl(340 75% 55% / 0.2);
+    --gold-glow: 0 0 24px hsl(45 100% 50% / 0.4);
+    --urgent-gradient: linear-gradient(135deg, hsl(0 75% 50%) 0%, hsl(0 85% 45%) 100%);
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222 47% 13%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222 47% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 350 89% 65%;
+    --primary: 340 80% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 350 30% 20%;
-    --secondary-foreground: 350 89% 75%;
+    --secondary: 340 40% 20%;
+    --secondary-foreground: 340 80% 75%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 350 89% 65%;
+    --urgent: 0 80% 55%;
+    --urgent-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 340 80% 60%;
   }
 }
 
@@ -118,6 +125,11 @@
 
   .gold-glow {
     box-shadow: var(--gold-glow);
+  }
+
+  .urgent-badge {
+    background: var(--urgent-gradient);
+    @apply text-white;
   }
 }
 

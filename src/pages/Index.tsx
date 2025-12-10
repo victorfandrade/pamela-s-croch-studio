@@ -4,31 +4,44 @@ import { LessonCard } from "@/components/LessonCard";
 import { VideoModal } from "@/components/VideoModal";
 import { PaymentModal } from "@/components/PaymentModal";
 import { MaterialsSection } from "@/components/MaterialsSection";
+import { PaymentSection } from "@/components/PaymentSection";
 import { Crown } from "lucide-react";
+
+// Import thumbnails
+import thumb1 from "@/assets/thumb-1.jpg";
+import thumb2 from "@/assets/thumb-2.jpg";
+import thumb3 from "@/assets/thumb-3.jpg";
+import thumb4 from "@/assets/thumb-4.jpg";
+import thumb5 from "@/assets/thumb-5.jpg";
+import thumb6 from "@/assets/thumb-6.jpg";
+import thumb7 from "@/assets/thumb-7.jpg";
+import thumb8 from "@/assets/thumb-8.jpg";
+import thumb9 from "@/assets/thumb-9.jpg";
 
 interface Lesson {
   number: number;
   title: string;
   url: string;
+  thumbnail?: string;
   isPremium?: boolean;
 }
 
 const freeLessons: Lesson[] = [
-  { number: 1, title: "Vestido Lisa Black Pink", url: "https://youtu.be/nPRnC6QM45M" },
-  { number: 2, title: "Técnicas Básicas de Crochê", url: "https://youtu.be/QLxRBTw2RfE" },
-  { number: 3, title: "Pontos Fundamentais", url: "https://youtu.be/ujSZmVLieOM" },
-  { number: 4, title: "Montagem de Peças", url: "https://youtu.be/tZW8jPDPxco" },
-  { number: 5, title: "Acabamentos Profissionais", url: "https://youtu.be/AB0VNso1yBo" },
-  { number: 6, title: "Técnicas Avançadas", url: "https://youtu.be/BSw-dczdLfw" },
-  { number: 7, title: "Modelagem Especial", url: "https://drive.google.com/file/d/13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy/view" },
-  { number: 8, title: "Detalhes Decorativos", url: "https://drive.google.com/file/d/1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP/view" },
-  { number: 9, title: "Projeto Completo", url: "https://drive.google.com/file/d/16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa/view" },
+  { number: 1, title: "Vestido Lisa Black Pink", url: "https://youtu.be/nPRnC6QM45M", thumbnail: thumb1 },
+  { number: 2, title: "Vestido Verão", url: "https://youtu.be/QLxRBTw2RfE", thumbnail: thumb2 },
+  { number: 3, title: "Vestido Poly", url: "https://youtu.be/ujSZmVLieOM", thumbnail: thumb3 },
+  { number: 4, title: "Vestido Valentina de Crochê", url: "https://youtu.be/tZW8jPDPxco", thumbnail: thumb4 },
+  { number: 5, title: "Saída de Praia Iara", url: "https://youtu.be/AB0VNso1yBo", thumbnail: thumb5 },
+  { number: 6, title: "Vestido Vitrais", url: "https://youtu.be/BSw-dczdLfw", thumbnail: thumb6 },
+  { number: 7, title: "Vestido Branco", url: "https://drive.google.com/file/d/13wBbHiOR_8_oLPWJ3HmoqIPdHFueK6jy/view", thumbnail: thumb7 },
+  { number: 8, title: "Vestido Branca de Neve", url: "https://drive.google.com/file/d/1bPnhgs5N8KRusKlvQPueqym2w0Y8z8jP/view", thumbnail: thumb8 },
+  { number: 9, title: "Vestido com Laço", url: "https://drive.google.com/file/d/16ufU8MytgqyPr4Fo7pzAdOO0dRz6LaTa/view", thumbnail: thumb9 },
 ];
 
 const premiumLessons: Lesson[] = [
-  { number: 10, title: "Vestido Exclusivo VIP", url: "", isPremium: true },
-  { number: 11, title: "Técnicas Secretas", url: "", isPremium: true },
-  { number: 12, title: "Masterclass Final", url: "", isPremium: true },
+  { number: 10, title: "Vestido Natal", url: "", isPremium: true },
+  { number: 11, title: "Vestido Moderno", url: "", isPremium: true },
+  { number: 12, title: "Vestido Ano Novo", url: "", isPremium: true },
 ];
 
 const Index = () => {
@@ -82,6 +95,7 @@ const Index = () => {
               <LessonCard
                 number={lesson.number}
                 title={lesson.title}
+                thumbnail={lesson.thumbnail}
                 onClick={() => handleLessonClick(lesson)}
               />
             </div>
@@ -92,7 +106,7 @@ const Index = () => {
       {/* Premium Lessons */}
       <section className="container pb-16">
         <div className="mb-10 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent/15 px-4 py-1.5">
             <Crown className="h-4 w-4 text-accent" />
             <span className="text-sm font-medium text-accent">
               Conteúdo Premium
@@ -126,6 +140,9 @@ const Index = () => {
 
       {/* Materials */}
       <MaterialsSection />
+
+      {/* Payment Section */}
+      <PaymentSection />
 
       {/* Footer */}
       <footer className="border-t border-border py-8">
