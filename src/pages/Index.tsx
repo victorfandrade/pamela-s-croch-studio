@@ -17,6 +17,9 @@ import thumb6 from "@/assets/thumb-6.jpg";
 import thumb7 from "@/assets/thumb-7.jpg";
 import thumb8 from "@/assets/thumb-8.jpg";
 import thumb9 from "@/assets/thumb-9.jpg";
+import thumb10 from "@/assets/thumb-10.jpg";
+import thumb11 from "@/assets/thumb-11.jpg";
+import thumb12 from "@/assets/thumb-12.jpg";
 
 interface Lesson {
   number: number;
@@ -39,9 +42,9 @@ const freeLessons: Lesson[] = [
 ];
 
 const premiumLessons: Lesson[] = [
-  { number: 10, title: "Vestido Natal", url: "", isPremium: true },
-  { number: 11, title: "Vestido Moderno", url: "", isPremium: true },
-  { number: 12, title: "Vestido Ano Novo", url: "", isPremium: true },
+  { number: 10, title: "Vestido Natal", url: "", isPremium: true, thumbnail: thumb10 },
+  { number: 11, title: "Vestido Moderno", url: "", isPremium: true, thumbnail: thumb11 },
+  { number: 12, title: "Vestido Ano Novo", url: "", isPremium: true, thumbnail: thumb12 },
 ];
 
 const Index = () => {
@@ -59,14 +62,14 @@ const Index = () => {
 
   const handleLessonClick = (lesson: Lesson) => {
     if (lesson.isPremium) {
-      setPaymentModalOpen(true);
-    } else {
-      setVideoModal({
-        isOpen: true,
-        url: lesson.url,
-        title: `Aula ${lesson.number.toString().padStart(2, "0")} - ${lesson.title}`,
-      });
+      // Premium content - do nothing (no modal)
+      return;
     }
+    setVideoModal({
+      isOpen: true,
+      url: lesson.url,
+      title: `Aula ${lesson.number.toString().padStart(2, "0")} - ${lesson.title}`,
+    });
   };
 
   return (
@@ -130,6 +133,7 @@ const Index = () => {
               <LessonCard
                 number={lesson.number}
                 title={lesson.title}
+                thumbnail={lesson.thumbnail}
                 isPremium
                 onClick={() => handleLessonClick(lesson)}
               />

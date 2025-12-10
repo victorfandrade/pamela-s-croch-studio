@@ -91,29 +91,35 @@ export const PaymentSection = () => {
             </div>
 
             {/* PIX Box */}
-            <div className="rounded-2xl border-2 border-primary/20 bg-primary/5 p-4 mb-6">
-              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
-                Dados para pagamento via PIX
-              </p>
+            <div className="rounded-2xl border-2 border-primary bg-gradient-to-br from-primary/10 to-primary/5 p-5 mb-6 shadow-lg">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                <p className="text-sm font-bold text-primary uppercase tracking-wider">
+                  Dados para pagamento via PIX
+                </p>
+              </div>
 
-              <div className="space-y-3">
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">Chave PIX (CPF)</p>
-                  <div className="flex items-center gap-2">
-                    <code className="flex-1 rounded-lg bg-card px-4 py-3 font-mono text-lg text-foreground font-bold border border-border">
+              <div className="space-y-4">
+                <div className="bg-card rounded-xl p-4 border border-border shadow-sm">
+                  <p className="text-xs text-muted-foreground mb-2 font-medium">Chave PIX (CPF)</p>
+                  <div className="flex items-center gap-3">
+                    <code className="flex-1 rounded-xl bg-muted px-4 py-3.5 font-mono text-xl text-foreground font-bold tracking-wider">
                       {pixKey}
                     </code>
                     <Button
                       variant="default"
                       size="lg"
                       onClick={copyPixKey}
-                      className="shrink-0"
+                      className="shrink-0 h-14 px-6 text-base font-bold shadow-lg hover:shadow-xl transition-all"
                     >
                       {copied ? (
-                        <Check className="h-5 w-5" />
+                        <>
+                          <Check className="h-5 w-5 mr-2" />
+                          Copiado!
+                        </>
                       ) : (
                         <>
-                          <Copy className="h-4 w-4 mr-2" />
+                          <Copy className="h-5 w-5 mr-2" />
                           Copiar
                         </>
                       )}
@@ -121,9 +127,9 @@ export const PaymentSection = () => {
                   </div>
                 </div>
 
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">Beneficiário</p>
-                  <p className="text-base font-bold text-foreground">
+                <div className="bg-card rounded-xl p-4 border border-border shadow-sm">
+                  <p className="text-xs text-muted-foreground mb-1 font-medium">Beneficiário</p>
+                  <p className="text-lg font-bold text-foreground">
                     Victor Figueiredo Andrade
                   </p>
                 </div>

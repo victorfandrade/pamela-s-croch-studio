@@ -17,13 +17,13 @@ export const LessonCard = ({
   onClick,
 }: LessonCardProps) => {
   return (
-    <button
+    <div
       onClick={onClick}
       className={cn(
         "group relative w-full overflow-hidden rounded-2xl bg-card border border-border/50 transition-all duration-300",
-        "hover:shadow-xl hover:-translate-y-1",
-        "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
-        isPremium && "ring-2 ring-accent/50"
+        isPremium 
+          ? "ring-2 ring-accent/50 cursor-default" 
+          : "hover:shadow-xl hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       )}
       style={{ boxShadow: "var(--card-shadow)" }}
     >
@@ -35,7 +35,7 @@ export const LessonCard = ({
             alt={title}
             className={cn(
               "h-full w-full object-cover transition-transform duration-500 group-hover:scale-105",
-              isPremium && "blur-[2px]"
+              isPremium && "blur-md"
             )}
             loading="lazy"
           />
@@ -90,6 +90,6 @@ export const LessonCard = ({
           </div>
         </div>
       </div>
-    </button>
+    </div>
   );
 };
