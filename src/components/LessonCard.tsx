@@ -35,7 +35,7 @@ export const LessonCard = ({
             alt={title}
             className={cn(
               "h-full w-full object-cover transition-transform duration-500 group-hover:scale-105",
-              isPremium && "blur-sm"
+              isPremium && "blur-[2px] brightness-95"
             )}
             loading="lazy"
           />
